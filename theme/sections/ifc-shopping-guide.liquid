@@ -1,0 +1,24 @@
+{{ 'ifc-brand.css' | asset_url | stylesheet_tag }}
+<section class="ifc-guide" aria-labelledby="ifc-guide-heading-{{ section.id }}">
+  <div class="ifc-guide__heading"><p class="ifc-eyebrow">Before you order</p><h2 id="ifc-guide-heading-{{ section.id }}">{{ section.settings.heading | escape }}</h2></div>
+  <div class="ifc-guide__items">
+    {% if product != blank and product.handle == section.settings.youth_product.handle %}
+      <div class="ifc-guide__youth"><strong>This is a youth hoodie.</strong><p>Sizes YXS–YXL are youth sizes, not adult sizes. Check the product details before choosing.</p></div>
+    {% endif %}
+    <details><summary>Choosing your size <span aria-hidden="true">+</span></summary><div><p>Check the size options and product details for the item you’re ordering. Sizing can vary between styles; youth and adult sizes are different.</p>{% if section.settings.size_guide != blank %}<a href="{{ section.settings.size_guide.url }}">View our size guide</a>{% endif %}{% if pages.contact != blank %}<p><a href="{{ pages.contact.url }}">Contact us</a> if you need help choosing.</p>{% endif %}</div></details>
+    {% if shop.shipping_policy.body != blank %}<details><summary>Shipping &amp; delivery <span aria-hidden="true">+</span></summary><div><p>Check our shipping policy for production and delivery information. Available delivery options and shipping charges are shown at checkout.</p><a href="{{ shop.shipping_policy.url }}">Read the shipping policy</a></div></details>{% endif %}
+    {% if shop.refund_policy.body != blank %}<details><summary>Returns &amp; order support <span aria-hidden="true">+</span></summary><div><p>Review return eligibility before ordering.</p><a href="{{ shop.refund_policy.url }}">Read the return policy</a>{% if pages.contact != blank %}<p><a href="{{ pages.contact.url }}">Get help with your order</a></p>{% endif %}</div></details>{% endif %}
+    {% if pages.contact != blank %}<a class="ifc-text-link ifc-guide__contact" href="{{ pages.contact.url }}">Have a question? Contact us <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.5"/></svg></a>{% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "IFC — Shopping guide",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "A little clarity. A better fit."},
+    {"type": "page", "id": "size_guide", "label": "Size guide", "info": "Optional. Link only to an accurate, supplier-approved guide."},
+    {"type": "product", "id": "youth_product", "label": "Youth hoodie", "info": "Shows a youth-sizing notice on this product's page."}
+  ],
+  "presets": [{"name": "IFC — Shopping guide"}]
+}
+{% endschema %}

@@ -1,0 +1,19 @@
+{
+  "name": "infantry-for-christ-storefront",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "theme:check": "shopify theme check --path theme --fail-level error",
+    "preview:build": "node scripts/build-preview.mjs",
+    "test:preview": "node scripts/test-preview.mjs",
+    "theme:package": "python3 scripts/package-theme.py"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@playwright/test": "1.64.1",
+    "@shopify/cli": "4.9.4",
+    "liquidjs": "10.30.0"
+  }
+}

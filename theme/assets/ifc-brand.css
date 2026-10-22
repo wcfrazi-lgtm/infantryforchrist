@@ -1,0 +1,41 @@
+/* Infantry for Christ. Scoped sections preserve Ritual's native commerce components. */
+.ifc-hero,.ifc-mission,.ifc-guide,.ifc-beliefs{--ifc-ink:#20231e;--ifc-cream:#f5f2e9;--ifc-olive:#d5dcbd;box-sizing:border-box}
+.ifc-hero *,.ifc-mission *,.ifc-guide *{box-sizing:border-box}
+.ifc-hero{display:grid;grid-template-columns:1fr 1fr;background:var(--ifc-cream);color:var(--ifc-ink);min-height:640px}
+.ifc-hero__copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(32px,5vw,88px)}
+.ifc-eyebrow{font:600 11px/1.5 var(--font-body--family,Arial,sans-serif);text-transform:uppercase;letter-spacing:.13em;margin:0 0 28px;display:flex;align-items:center;gap:12px}
+.ifc-cross{height:18px;width:14px;position:relative;display:inline-block;flex:none}
+.ifc-cross:before,.ifc-cross:after{content:"";position:absolute;background:currentColor}
+.ifc-cross:before{width:3px;height:18px;left:6px}.ifc-cross:after{width:14px;height:3px;top:5px;left:0}
+.ifc-hero h1{font:800 clamp(44px,5.45vw,92px)/.98 var(--font-heading--family,Arial,sans-serif);text-transform:uppercase;letter-spacing:-.055em;margin:0 0 26px;max-width:700px;text-wrap:balance;color:inherit;overflow-wrap:normal}
+.ifc-hero__description{max-width:360px;font-size:16px;line-height:1.65;margin:0 0 30px}
+.ifc-actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
+.ifc-button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;background:var(--ifc-ink);color:var(--ifc-cream);min-height:54px;padding:15px 22px;font:600 13px/1.5 var(--font-body--family,Arial,sans-serif);text-decoration:none;border:1px solid var(--ifc-ink)}
+.ifc-button:hover{background:#414936;color:#fff}.ifc-button span{font-size:22px;line-height:1}
+.ifc-text-link{display:inline-flex;align-items:center;gap:14px;min-height:44px;color:inherit;text-underline-offset:5px;font-size:13px;font-weight:600}
+.ifc-text-link:hover{text-decoration-thickness:2px}.ifc-hero__footnote{font-size:11px;letter-spacing:.02em;margin:44px 0 0;opacity:.75}
+.ifc-hero__visual{position:relative;display:flex;align-items:center;justify-content:center;background:#fff;min-width:0;padding:80px 42px 110px;overflow:hidden}
+.ifc-hero__edition{position:absolute;top:26px;left:30px;font:500 10px/1.5 var(--font-body--family,Arial,sans-serif);letter-spacing:.13em}
+.ifc-hero__image{display:block;width:100%;height:100%;max-height:510px;object-fit:contain}
+.ifc-hero__product{position:absolute;bottom:24px;left:28px;right:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 20px;background:var(--ifc-cream);color:var(--ifc-ink);text-decoration:none;border:1px solid #20231e22}
+.ifc-hero__product small{display:block;text-transform:uppercase;font-size:9px;letter-spacing:.12em;margin-bottom:5px}.ifc-hero__product strong{font-size:13px;font-weight:600}.ifc-hero__product-arrow{font-size:27px}.ifc-hero__product:hover{background:#fff}
+.ifc-hero__caption{position:absolute;bottom:24px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.ifc-hero__art{position:relative;min-height:370px;width:100%;display:grid;place-items:center}.ifc-hero__halo{position:absolute;width:300px;aspect-ratio:1;border:1px solid #20231e40;border-radius:50%;outline:1px solid #20231e20;outline-offset:20px}
+.ifc-hero__cross{position:absolute;width:10px;height:220px;top:10px;background:#20231e25;transform:rotate(13deg)}.ifc-hero__cross:after{content:"";position:absolute;width:100px;height:10px;left:-45px;top:60px;background:#20231e25}
+.ifc-hero__art-word{position:relative;font:800 clamp(48px,6vw,92px)/.95 var(--font-heading--family,Arial,sans-serif);letter-spacing:-.05em;text-align:center}
+.ifc-beliefs{background:var(--ifc-ink);color:var(--ifc-cream);display:flex;align-items:center;justify-content:center;gap:clamp(16px,5vw,90px);padding:20px 24px;font:500 10px/1.5 var(--font-body--family,Arial,sans-serif);letter-spacing:.15em;text-transform:uppercase}
+.ifc-beliefs span[aria-hidden]{color:var(--ifc-olive);font-size:16px}
+.ifc-mission{display:grid;grid-template-columns:1fr 1.5fr;gap:70px;background:var(--ifc-ink);color:var(--ifc-cream);padding:clamp(40px,7vw,110px) clamp(24px,6vw,100px);scroll-margin-top:100px}
+.ifc-mission__mark{display:flex;align-items:center;gap:10px;font:800 clamp(70px,10vw,160px)/1 var(--font-heading--family,Arial,sans-serif);letter-spacing:-.07em;color:var(--ifc-olive)}.ifc-mission__mark span{font-size:.45em}
+.ifc-mission h2{font:700 clamp(30px,3.5vw,58px)/1.05 var(--font-heading--family,Arial,sans-serif);color:inherit;text-transform:uppercase;letter-spacing:-.04em;margin:0 0 24px;max-width:650px}
+.ifc-mission__content>p{font-size:16px;line-height:1.8;max-width:590px;margin:0 0 30px;color:#deded1}
+.ifc-mission__values{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid #f5f2e933;padding:24px 0 20px}.ifc-mission__values span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ifc-olive)}.ifc-mission__values p{font-size:12px;line-height:1.7;margin:10px 0;color:#deded1}
+.ifc-guide{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;background:var(--ifc-cream);color:var(--ifc-ink);padding:clamp(40px,6vw,90px) clamp(24px,6vw,100px)}
+.ifc-guide h2{font:700 clamp(30px,3vw,48px)/1.1 var(--font-heading--family,Arial,sans-serif);color:inherit;text-transform:uppercase;letter-spacing:-.04em;margin:0;max-width:380px}.ifc-guide .ifc-eyebrow{margin-bottom:20px}
+.ifc-guide details{border-bottom:1px solid #20231e40}.ifc-guide summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;padding:22px 0;font-size:14px;font-weight:600;min-height:64px}.ifc-guide summary::-webkit-details-marker{display:none}.ifc-guide summary span{font-size:23px;font-weight:400}.ifc-guide details[open] summary span{transform:rotate(45deg)}
+.ifc-guide details>div{padding:0 0 24px;font-size:14px;line-height:1.8}.ifc-guide details p{margin:0 0 12px}.ifc-guide a{color:inherit;text-underline-offset:4px}.ifc-guide__contact{margin-top:20px}.ifc-guide__youth{padding:20px;background:#e4e7d7;border-left:3px solid #4d5c36;margin-bottom:12px;font-size:14px;line-height:1.65}.ifc-guide__youth p{margin-bottom:0}
+.ifc-hero a:focus-visible,.ifc-mission a:focus-visible,.ifc-guide a:focus-visible,.ifc-guide summary:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+@media(min-width:1600px){.ifc-hero{min-height:740px}.ifc-hero__image{max-height:600px}}
+@media(max-width:899px){.ifc-hero{grid-template-columns:1fr;min-height:0}.ifc-hero__copy{padding:44px 24px}.ifc-hero h1{font-size:clamp(43px,8.5vw,74px);max-width:650px}.ifc-hero__description{max-width:450px}.ifc-hero__footnote{margin-top:26px}.ifc-hero__visual{min-height:460px;padding:60px 30px 100px}.ifc-hero__image{height:350px;max-height:none}.ifc-mission,.ifc-guide{grid-template-columns:1fr;gap:32px}.ifc-mission__intro{display:flex;justify-content:space-between;align-items:center;gap:20px}.ifc-mission__intro .ifc-eyebrow{margin:0;max-width:180px}.ifc-mission__mark{font-size:66px}}
+@media(max-width:479px){.ifc-beliefs{gap:12px;font-size:8px;letter-spacing:.06em;padding:16px 12px}.ifc-beliefs span[aria-hidden]{font-size:11px}.ifc-hero__visual{min-height:390px}.ifc-hero__image{height:290px}.ifc-hero__product{left:16px;right:16px;bottom:16px;padding:14px}.ifc-hero__edition{left:20px;font-size:9px}.ifc-mission__values{grid-template-columns:1fr;gap:12px}.ifc-mission__values p{margin:5px 0}.ifc-mission__content>p{font-size:15px}.ifc-actions{gap:14px}.ifc-button{gap:18px}}
+@media(prefers-reduced-motion:reduce){.ifc-hero *,.ifc-mission *,.ifc-guide *{scroll-behavior:auto;transition:none}}

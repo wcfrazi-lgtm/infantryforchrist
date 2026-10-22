@@ -1,0 +1,26 @@
+{{ 'ifc-brand.css' | asset_url | stylesheet_tag }}
+<section id="ifc-mission" class="ifc-mission" aria-labelledby="ifc-mission-heading-{{ section.id }}">
+  <div class="ifc-mission__intro"><p class="ifc-eyebrow">{{ section.settings.eyebrow | escape }}</p><span class="ifc-mission__mark" aria-hidden="true">IFC<span>✦</span></span></div>
+  <div class="ifc-mission__content">
+    <h2 id="ifc-mission-heading-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+    <p>{{ section.settings.description | escape }}</p>
+    <div class="ifc-mission__values">
+      <div><span>01 / Faith</span><p>Keep Christ at the center.</p></div>
+      <div><span>02 / Purpose</span><p>Carry your convictions into the everyday.</p></div>
+      <div><span>03 / Community</span><p>Encourage one another along the way.</p></div>
+    </div>
+    {% if section.settings.facebook_url != blank %}<a class="ifc-text-link" href="{{ section.settings.facebook_url }}" target="_blank" rel="noopener noreferrer">Join us on Facebook <span class="visually-hidden">(opens in a new tab)</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.5"/></svg></a>{% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "IFC — Our purpose",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "More than what you wear"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Faith in action. Every day."},
+    {"type": "textarea", "id": "description", "label": "Description", "default": "Infantry for Christ is about showing up with faith and living with purpose. Wear a reminder of what matters. Let it open a conversation. Take the next step with conviction."},
+    {"type": "url", "id": "facebook_url", "label": "Facebook page"}
+  ],
+  "presets": [{"name": "IFC — Our purpose"}]
+}
+{% endschema %}

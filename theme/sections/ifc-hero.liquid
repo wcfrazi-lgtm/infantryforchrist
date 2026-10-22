@@ -1,0 +1,49 @@
+{{ 'ifc-brand.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign featured = section.settings.product
+  assign hero_image = section.settings.image | default: featured.featured_image
+  assign shop_link = section.settings.shop_link | default: routes.all_products_collection_url
+%}
+<section class="ifc-hero" aria-labelledby="ifc-heading-{{ section.id }}">
+  <div class="ifc-hero__copy">
+    <p class="ifc-eyebrow"><span class="ifc-cross" aria-hidden="true"></span>{{ section.settings.eyebrow | escape }}</p>
+    <h1 id="ifc-heading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h1>
+    <p class="ifc-hero__description">{{ section.settings.description | escape }}</p>
+    <div class="ifc-actions">
+      <a class="ifc-button" href="{{ shop_link }}">{{ section.settings.button_label | escape }} <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a class="ifc-text-link" href="#ifc-mission">Our purpose <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="ifc-hero__footnote">Faith at the center. Purpose in every step.</p>
+  </div>
+  <div class="ifc-hero__visual">
+    <span class="ifc-hero__edition">INFANTRY FOR CHRIST / EVERYDAY FAITH</span>
+    {% if hero_image != blank %}
+      {{ hero_image | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1200, 1600', sizes: '(min-width: 900px) 50vw, 100vw', loading: 'eager', fetchpriority: 'high', class: 'ifc-hero__image' }}
+    {% else %}
+      <div class="ifc-hero__art" aria-hidden="true"><span class="ifc-hero__halo"></span><span class="ifc-hero__cross"></span><span class="ifc-hero__art-word">WALK<br>BY FAITH.</span></div>
+    {% endif %}
+    {% if featured != blank %}
+      <a class="ifc-hero__product" href="{{ featured.url }}"><span><small>In the collection</small><strong>{{ featured.title | escape }}</strong></span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.5"/></svg></a>
+    {% else %}
+      <p class="ifc-hero__caption">For the everyday walk.</p>
+    {% endif %}
+  </div>
+</section>
+<div class="ifc-beliefs" aria-label="Our values"><span>Rooted in faith</span><span aria-hidden="true">✦</span><span>Driven by purpose</span><span aria-hidden="true">✦</span><span>Worn with conviction</span></div>
+{% schema %}
+{
+  "name": "IFC — Brand hero",
+  "tag": "div",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Christian apparel. Everyday conviction."},
+    {"type": "textarea", "id": "heading", "label": "Heading", "default": "Wear your faith.\nWalk with purpose."},
+    {"type": "textarea", "id": "description", "label": "Description", "default": "Faith belongs in the everyday. Find Christian apparel that speaks to what you stand for."},
+    {"type": "text", "id": "button_label", "label": "Shop button", "default": "Shop the collection"},
+    {"type": "url", "id": "shop_link", "label": "Shop link"},
+    {"type": "product", "id": "product", "label": "Featured product"},
+    {"type": "image_picker", "id": "image", "label": "Editorial image", "info": "Optional. Otherwise uses the featured product's real image. Choose photography you own or have permission to use."}
+  ],
+  "presets": [{"name": "IFC — Brand hero"}],
+  "enabled_on": {"templates": ["index"]}
+}
+{% endschema %}
